@@ -1,8 +1,14 @@
 FROM ubuntu:18.04
 
 RUN apt update
+RUN apt upgrade -y
 
-RUN apt-get install -y python3.6 python3-pip python3-venv python-psycopg2 postgresql
+RUN apt-get install -y python3.6 python3-pip python3-venv python-psycopg2 postgresql postgresql-client postgresql-contrib postgresql-plpython
+
+FROM library/postgres
+ENV POSTGRES_USER brime
+ENV POSTGRES_PASSWORD panda
+ENV POSTGRES_DB queensdb
 
 RUN pip3 install --upgrade pip
 
