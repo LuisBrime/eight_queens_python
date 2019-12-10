@@ -20,7 +20,7 @@ ADD eightqueens.py /
 ADD test_basic.py /
 ADD main.py /
 
-RUN python3 -m venv env
+RUN python -m venv env
 RUN source env/bin/activate
 
 RUN pip install -r requirements.txt
