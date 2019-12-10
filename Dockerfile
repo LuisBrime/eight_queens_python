@@ -25,6 +25,7 @@ RUN /etc/init.d/postgresql start &&\
 
 EXPOSE 5432
 
+USER root
 RUN mkdir /eightqueens
 WORKDIR /eightqueens
 COPY . /eightqueens
