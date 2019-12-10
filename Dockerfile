@@ -15,6 +15,8 @@ RUN apt-get install -y postgresql-client
 RUN apt-get install -y postgresql-contrib 
 RUN apt-get install -y postgresql-plpython
 
+RUN pip install -r requirements.txt
+
 FROM library/postgres
 ENV POSTGRES_USER brime
 ENV POSTGRES_PASSWORD panda
@@ -27,7 +29,5 @@ COPY . /eightqueens
 ADD eightqueens.py /
 ADD test_basic.py /
 ADD main.py /
-
-RUN pip install -r requirements.txt
 
 CMD [ "python", "./main.py" ]
