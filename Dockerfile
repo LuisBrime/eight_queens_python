@@ -5,7 +5,14 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update
 RUN apt upgrade -y
 
-RUN apt-get install -y python3.6 python-pip python3-venv python-psycopg2 postgresql postgresql-client postgresql-contrib postgresql-plpython
+RUN apt-get install -y python3.6 
+RUN apt-get install python3-pip 
+RUN apt-get install python3-venv 
+RUN apt-get install python-psycopg2 
+RUN apt-get install postgresql 
+RUN apt-get install postgresql-client 
+RUN apt-get install postgresql-contrib 
+RUN apt-get install postgresql-plpython
 
 FROM library/postgres
 ENV POSTGRES_USER brime
