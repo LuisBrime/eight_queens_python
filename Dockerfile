@@ -18,10 +18,10 @@ RUN apt-get install -y postgresql-plpython
 # ENV POSTGRES_USER brime
 # ENV POSTGRES_PASSWORD panda
 # ENV POSTGRES_DB queensdb
-USER brime
+USER postgres
 RUN /etc/init.d/postgresql start &&\
     psql --command "CREATE USER brime WITH SUPERUSER PASSWORD 'panda';" &&\
-    createdb -0 queensdb
+    createdb -0 brime queensdb
 
 EXPOSE 5432
 
