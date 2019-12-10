@@ -12,8 +12,6 @@ ENV POSTGRES_USER brime
 ENV POSTGRES_PASSWORD panda
 ENV POSTGRES_DB queensdb
 
-RUN pip install --upgrade pip
-
 RUN mkdir /eightqueens
 WORKDIR /eightqueens
 COPY . /eightqueens
