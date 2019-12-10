@@ -21,7 +21,7 @@ RUN apt-get install -y postgresql-plpython
 USER postgres
 RUN /etc/init.d/postgresql start &&\
     psql --command "CREATE USER brime WITH SUPERUSER PASSWORD 'panda';" &&\
-    createdb -0 brime queensdb
+    createdb -O brime queensdb
 
 EXPOSE 5432
 
