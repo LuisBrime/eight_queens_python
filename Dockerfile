@@ -6,13 +6,13 @@ RUN apt update
 RUN apt upgrade -y
 
 RUN apt-get install -y python3.6 
-RUN apt-get install python3-pip 
-RUN apt-get install python3-venv 
-RUN apt-get install python-psycopg2 
-RUN apt-get install postgresql 
-RUN apt-get install postgresql-client 
-RUN apt-get install postgresql-contrib 
-RUN apt-get install postgresql-plpython
+RUN apt-get install -y python3-pip 
+RUN apt-get install -y python3-venv 
+RUN apt-get install -y python-psycopg2 
+RUN apt-get install -y postgresql 
+RUN apt-get install -y postgresql-client 
+RUN apt-get install -y postgresql-contrib 
+RUN apt-get install -y postgresql-plpython
 
 FROM library/postgres
 ENV POSTGRES_USER brime
