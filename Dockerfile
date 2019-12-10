@@ -2,10 +2,10 @@ FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt update
+RUN apt update -y
 RUN apt upgrade -y
 
-RUN apt-get install -y python3.6 
+RUN apt-get install -y python3
 RUN apt-get install -y python3-pip 
 RUN apt-get install -y python3-venv 
 RUN apt-get install -y python-psycopg2 
