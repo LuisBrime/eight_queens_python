@@ -14,9 +14,6 @@ RUN apt-get install -y postgresql-client
 RUN apt-get install -y postgresql-contrib 
 RUN apt-get install -y postgresql-plpython
 
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
-
 FROM library/postgres
 ENV POSTGRES_USER brime
 ENV POSTGRES_PASSWORD panda
@@ -31,5 +28,7 @@ ADD test_basic.py /
 ADD main.py /
 
 FROM python:3
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
 COPY ./main.py ./
 CMD python main.py
