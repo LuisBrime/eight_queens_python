@@ -1,3 +1,4 @@
+FROM ubuntu:18.04
 FROM python:3
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -30,4 +31,4 @@ ADD eightqueens.py /
 ADD test_basic.py /
 ADD main.py /
 
-CMD [ "python", "./main.py" ]
+CMD python main.py
