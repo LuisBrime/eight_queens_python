@@ -15,7 +15,8 @@ RUN apt-get install -y postgresql-client
 RUN apt-get install -y postgresql-contrib 
 RUN apt-get install -y postgresql-plpython
 
-RUN pip install -r requirements.txt
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
 
 FROM library/postgres
 ENV POSTGRES_USER brime
