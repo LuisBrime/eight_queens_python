@@ -5,7 +5,8 @@ from eightqueens import QueensSolver
 if __name__ == "__main__":
     engine = db.create_engine('postgresql+psycopg2://brime:panda@localhost/queensdb')
     connection = engine.connect()
-    solutions_table = db.Table('solutions')
+    metadata = db.MetaData()
+    solutions_table = db.Table('solutions', metadata, db.Column('solution_string', db.String(25), nullable=False))
     payload = []
 
     solver = QueensSolver(8)
