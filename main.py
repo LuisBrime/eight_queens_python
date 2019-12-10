@@ -1,17 +1,14 @@
 import sqlalchemy as db
+from sqlalchemy import table
 from eightqueens import QueensSolver
 
 if __name__ == "__main__":
-    print("hey")
-    engine = db.create_engine('postgresql://brime:panda@localhost/queensdb')
+    engine = db.create_engine('postgresql+psycopg2://brime:panda@localhost/queensdb')
     connection = engine.connect()
-    query = db.insert('solutions')
+    solutions_table = db.Table('solutions')
     payload = []
 
     solver = QueensSolver(8)
     for solution in solver.solutions:
-        payload.extend([{
-            'solution_string': solution.copy()
-        }])
-    
-    ResultProxy = connection.execute(query, payload)
+        query = db.instert(solutions_table).values(solution_string = str(solution))
+        ResultProxy = connection.execute(query)
