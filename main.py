@@ -3,7 +3,7 @@ from sqlalchemy import table
 from eightqueens import QueensSolver
 
 if __name__ == "__main__":
-    engine = db.create_engine('postgresql+psycopg2://brime:panda@localhost/queensdb')
+    engine = db.create_engine('postgresql+psycopg2://brime:panda@db/queensdb')
     connection = engine.connect()
     metadata = db.MetaData()
     solutions_table = db.Table('solutions', metadata, db.Column('solution_string', db.String(25), nullable=False))
