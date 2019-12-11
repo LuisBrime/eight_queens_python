@@ -1,4 +1,4 @@
-# eight_queens_python
+# eight_queens_python :shipit:
 [![Build Status](https://travis-ci.org/LuisBrime/eightqueenspython.svg?branch=master)](https://travis-ci.org/LuisBrime/eightqueenspython)
 
 This is the solution for [Eight Queens Puzzle](https://en.wikipedia.org/wiki/Eight_queens_puzzle) written in Python.
@@ -15,6 +15,7 @@ Solutions for the queens puzzle with N = 8 queens to N = 17 can be tested. By de
 - [Docker](https://docs.docker.com/v17.09/engine/installation/#cloud)
 - [Docker-Compose](https://docs.docker.com/compose/install/)
 
+### Step by step
 1. Clone this repository
 
 2. Start containers
