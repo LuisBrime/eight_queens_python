@@ -18,13 +18,6 @@ RUN apt-get install -y postgresql-plpython
 # ENV POSTGRES_USER brime
 # ENV POSTGRES_PASSWORD panda
 # ENV POSTGRES_DB queensdb
-USER postgres
-RUN /etc/init.d/postgresql start &&\
-    psql --command "CREATE USER brime WITH SUPERUSER PASSWORD 'panda';" &&\
-    createdb -O brime queensdb
-
-EXPOSE 5432
-
 USER root
 RUN mkdir /eightqueens
 WORKDIR /eightqueens
@@ -33,6 +26,13 @@ COPY . /eightqueens
 ADD eightqueens.py /
 ADD test_basic.py /
 ADD main.py /
+
+USER postgres
+RUN /etc/init.d/postgresql start &&\
+    psql --command "CREATE USER brime WITH SUPERUSER PASSWORD 'panda';" &&\
+    createdb -O brime queensdb
+
+EXPOSE 5432
 
 FROM python:3
 COPY requirements.txt ./
