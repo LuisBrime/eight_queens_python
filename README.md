@@ -29,5 +29,16 @@ Run the following command:
 sudo docker-compose run web python main.py db postgres_queens
 ```
 
-Running the code will solve for 8 Queens, it prints the number of solutions and each of them.
-Also stores them in a PostgreSQL Database
+Running the code will solve for 8 Queens, it prints the number of solutions and each of them and stores them in a PostgreSQL Database.
+
+To connect to the database and check for the solutions, run the following code:
+
+```
+sudo docker exec -it postgres_queens psql -U brime -d queensdb
+```
+
+This will enable you to type queries to the table *solutions*, for example:
+
+```
+SELECT * FROM solutions;
+```
