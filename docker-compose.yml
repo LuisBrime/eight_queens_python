@@ -1,8 +1,12 @@
 version: "3"
 services:
-    db:
+    web:
         build: .
-        image: "postgres"
+        command: python main.python
+        links:
+            - db
+    db:
+        image: postgres
         container_name: "postgres_queens"
         environment: 
             - POSTGRES_USER=brime
