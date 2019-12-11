@@ -1,0 +1,13 @@
+version: "3"
+services:
+    db:
+        image: "postgres"
+        container_name: "postgres_queens"
+        environment: 
+            - POSTGRES_USER=brime
+            - POSTGRES_PASSWORD=panda
+            - POSTGRES_DB=queensdb
+        ports:
+            - "54320:5432"
+        volumes:
+            - ./postgres-data:/var/lib/postgresql/data
