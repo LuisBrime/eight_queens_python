@@ -12,8 +12,8 @@ Solutions for the queens puzzle with N = 8 queens to N = 17 can be tested. By de
  
 ## Run the code
 ### Prerequisites
-- Docker
-- Docker-Compose
+- [Docker](https://docs.docker.com/v17.09/engine/installation/#cloud)
+- [Docker-Compose](https://docs.docker.com/compose/install/)
 
 1. Run this repository
 
