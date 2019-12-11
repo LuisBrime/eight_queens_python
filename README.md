@@ -20,11 +20,14 @@ Solutions for the queens puzzle with N = 8 queens to N = 17 can be tested. By de
 2. Start containers
 Run the following command:
 ```
-docker-compose up -d --build
+sudo docker-compose up -d --build
 ```
 
 3. Run containers
 Run the following command:
 ```
-docker-compose run web python main.py db postgres_queens
+sudo docker-compose run web python main.py db postgres_queens
 ```
+
+Running the code will solve for 8 Queens, it prints the number of solutions and each of them.
+Also stores them in a PostgreSQL Database

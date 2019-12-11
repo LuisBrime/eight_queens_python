@@ -16,3 +16,7 @@ services:
             - "54320:5432"
         volumes:
             - ./postgres-data:/var/lib/postgresql/data
+    psql:
+        links:
+            - db
+        command: 'sh -c ''exec psql -h "db" -p "5432" -U brime -W panda'''
