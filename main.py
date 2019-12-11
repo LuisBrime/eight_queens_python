@@ -13,6 +13,9 @@ if __name__ == "__main__":
     payload = []
 
     solver = QueensSolver(8)
+    print("Solutions for Eight Queens:")
+    print(len(solver.solutions))
     for solution in solver.solutions:
+        print(str(solution))
         query = db.insert(solutions_table).values(solution_string = str(solution))
         ResultProxy = connection.execute(query)
